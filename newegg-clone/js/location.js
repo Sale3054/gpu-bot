@@ -1,0 +1,1 @@
+jsonFeed({"country":"US","state":"CA","stateName":"California","zipcode":"92673","timezone":"America/Los_Angeles","latitude":"33.46010","longitude":"-117.63820","city":"San Clemente","continent":"NA"});
