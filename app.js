@@ -1,10 +1,5 @@
 const puppeteer = require('puppeteer')
-const config = require('./config.json')
-const http = require('http');
-
-const hostname = '127.0.0.1';
-const port = 3000;
-
+// const config = require('./config.json')
 
 async function report (log) {
 	currentTime = new Date();
@@ -13,11 +8,12 @@ async function report (log) {
 
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless : false
+  });
   const page = await browser.newPage();
 
   await page.goto('https://newegg.com');
-  // await page.screenshot({path: 'example.png'});
 
   // await browser.close();
 })();
