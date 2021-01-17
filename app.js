@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer')
-// const config = require('./config.json')
+const config = require('./config.json')
 
 async function report (log) {
 	currentTime = new Date();
