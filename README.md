@@ -6,8 +6,8 @@
 
 * Connect to a website
 * Identify the product location
-* Identify Availability* 
-Identify Price
+* Identify Availability
+* Identify Price
 
 * Add the product to the cart
 * Fill in forms
