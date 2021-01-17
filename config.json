@@ -1,4 +1,12 @@
 {
     "url":"SPECIFY NEWEGG URL HERE",
-    "item_no":"PRODUCT KEY"
+    "item_no":"PRODUCT KEY",
+    "address":{
+        "house_add":"House number and street name",
+        "apt_no":"Apartment number, if applicable",
+        "city":"City of shipping address",
+        "state":"State of shipping address",
+        "zip":"zip code"
+    }
+    
 }
