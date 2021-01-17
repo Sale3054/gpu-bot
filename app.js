@@ -1,16 +1,23 @@
-// const puppeteer = require('puppeteer')
+const puppeteer = require('puppeteer')
 const config = require('./config.json')
-const http = require('./newegg-clone/index.html');
+const http = require('http');
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+async function report (log) {
+	currentTime = new Date();
+	console.log(currentTime.toString().split('G')[0] + ': ' + log)
+}
+
+
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.goto('https://newegg.com');
+  await page.screenshot({path: 'example.png'});
+
+  await browser.close();
+})();
