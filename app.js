@@ -17,7 +17,7 @@ async function report (log) {
   const page = await browser.newPage();
 
   await page.goto('https://newegg.com');
-  await page.screenshot({path: 'example.png'});
+  // await page.screenshot({path: 'example.png'});
 
-  await browser.close();
+  // await browser.close();
 })();
