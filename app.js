@@ -35,7 +35,9 @@ class Clicker
 		this.logger.log("Navigated to email page");
 		this.page.once('load', () => this.page.type('input', "asdfasgijasogasoidghjsda"));
 		this.logger.log("Filled email form, submitting...");
-		this.page.click("#signInSubmit");
+		// this.page.click("#signInSubmit");
+		//TODO: Figure out why this is crashing ^
+		//this causes errors...for next time
 	}
 }
 
