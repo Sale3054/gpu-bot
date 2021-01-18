@@ -16,32 +16,37 @@ class Logger
 
 class Clicker
 {
-	constructor()
+	constructor(page, browser)
 	{
+		this.page = page;
+		this.browser = browser;
 		this.logger = new Logger();
 		this.logger.log("Creating new Clicker instance");
 	}
 
-	click_sign_in(page)
+	async click_sign_in()
 	{
-		page.click(".nav-complex-inner");
-		page.waitForNavigation();
+		this.page.click(".nav-complex-inner");
+		this.page.waitForNavigation();
 	}
 
-	click_email_form(page)
+	async click_email_form()
 	{
-		page.click("#email");
+		this.logger.log("Navigated to email page");
+		this.page.once('load', () => this.page.type('input', "asdfasgijasogasoidghjsda"));
+		this.logger.log("Filled email form, submitting...");
+		this.page.click("#signInSubmit");
 	}
 }
 
 async function main(){
   const browser = await puppeteer.launch({"headless": false, "defaultViewport": null});
   const page = await browser.newPage();
-	const clicker = new Clicker();
+	const clicker = new Clicker(page, browser);
   await page.goto('https://newegg.com');
 
-  clicker.click_sign_in(page);
-	clicker.click_email_form(page);
+  clicker.click_sign_in();
+	clicker.click_email_form();
   //await browser.close();
 }
 
